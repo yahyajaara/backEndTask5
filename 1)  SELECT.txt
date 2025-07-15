@@ -1,0 +1,40 @@
+1)  SELECT 
+    product_name, 
+    model_year, 
+    list_price
+    FROM 
+    Production.products
+    WHERE 
+    model_year IN (2016, 2017, 2018);
+
+
+2)  SELECT 
+    p.product_name, 
+    p.model_year, 
+    p.list_price, 
+    c.category_name
+    FROM 
+    Production.products p
+    JOIN 
+    Production.categories c 
+    ON p.category_id = c.category_id
+    WHERE 
+    p.model_year IN (2016, 2017, 2018);
+
+
+3)  SELECT 
+    p.product_name, 
+    p.model_year, 
+    p.list_price, 
+    c.category_name, 
+    b.brand_name
+    FROM 
+    Production.products p
+    JOIN 
+    Production.categories c 
+    ON p.category_id = c.category_id
+    JOIN 
+    Production.brands b 
+    ON p.brand_id = b.brand_id
+    WHERE 
+    p.model_year IN (2016, 2017, 2018);
